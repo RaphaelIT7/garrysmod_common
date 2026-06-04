@@ -74,8 +74,7 @@ namespace GarrysMod
 		{
 		public:
 			virtual ~ILuaShared( ) = 0;
-			// NOTE: magicBool - could maybe be bIsDedicated? true if its a dedicated server?
-			virtual void Init( void *( *interfaceFactory )( const char *, int * ), bool magicBool, CSteamAPIContext *context, IGet *pGet ) = 0;
+			virtual void Init( void *( *interfaceFactory )( const char *, int * ), bool isDedicated, IGet *pGet ) = 0;
 			virtual void Shutdown( ) = 0;
 			virtual void DumpStats( ) = 0;
 			virtual ILuaInterface *CreateLuaInterface( unsigned char realm, bool unknown ) = 0;
