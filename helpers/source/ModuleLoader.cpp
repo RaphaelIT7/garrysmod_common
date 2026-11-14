@@ -68,10 +68,13 @@ void *ModuleLoader::LoadModule( const std::string &name )
 
 #if defined ARCHITECTURE_X86_64
 
+		"garrysmod/bin/linux64/%s_srv.so",
 		"bin/linux64/lib%s_client.so",
 		"bin/linux64/%s_client.so",
 		"bin/linux64/lib%s.so",
 		"bin/linux64/%s.so",
+		"bin/linux64/lib%s_srv.so",
+		"bin/linux64/%s_srv.so",
 
 #elif defined ARCHITECTURE_X86
 

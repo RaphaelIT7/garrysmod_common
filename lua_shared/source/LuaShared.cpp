@@ -64,7 +64,10 @@ static FunctionType GetSymbol( const char *name )
 
 #elif defined SYSTEM_LINUX && defined ARCHITECTURE_X86_64
 
-	void *binary = dlopen( "bin/linux64/lua_shared.so", RTLD_LAZY | RTLD_NOLOAD );
+	void *binary = dlopen( "garrysmod/bin/linux64/lua_shared_srv.so", RTLD_LAZY | RTLD_NOLOAD );
+	if( binary == nullptr )
+		binary = dlopen( "bin/linux64/lua_shared.so", RTLD_LAZY | RTLD_NOLOAD );
+
 	if( binary == nullptr )
 		binary = dlopen( "bin/linux64/lua_shared_client.so", RTLD_LAZY | RTLD_NOLOAD );
 
